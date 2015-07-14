@@ -44,7 +44,7 @@ class Rkt_NLforGuest_Model_Observer
 
 			//check whether cookie exist
 			if ($cookie = $subscriberModel->getLoginValidationStatus()) {
-				$array = explode('-', $cookie);print_r($array);
+				$array = explode('-', $cookie);
 			                	
 				/*
 				 * expect two parts in $array
@@ -56,8 +56,6 @@ class Rkt_NLforGuest_Model_Observer
 					$subscriber = $subscriberModel->load((int)$subscriberId);
 
 					//validate subscriber
-					print_r($subscriber->getId());
-					print_r($subscriber->getCode());	
 					if ($subscriber->getId() && $code = $subscriber->getCode()) {
 						//check for email mathes
 						if (trim($subscriber->getEmail()) == $customerEmail) {
